@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Restaurant UI</title>
+    <link rel='stylesheet' href='/style/style.css' />
+</head>
+<body>
+    <h1>Restaurant UI</h1>
+
+    <form action="/ui/restaurants" method="get">
+        <label for="page">Page:</label>
+        <input type="number" id="page" name="page" value="{{page}}">
+
+        <label for="perPage">Per Page:</label>
+        <input type="number" id="perPage" name="perPage" value="{{perPage}}">
+
+        <label for="borough">Borough:</label>
+        <input type="text" id="borough" name="borough" value="{{borough}}">
+
+        <button type="submit">Submit</button>
+    </form>
+
+ 
+
+    <ul>
+        {{#each restaurants}}
+            <li>
+                <strong>{{name}}</strong> - {{borough}} - {{cuisine}}
+                <br>
+                Score : {{averageScore}}
+            </li>
+        {{/each}}
+    </ul>
+</body>
+</html>
